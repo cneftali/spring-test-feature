@@ -97,7 +97,6 @@ public class JmsContext {
 		jmsContainer.setConnectionFactory(connectionFactory());
 		jmsContainer.setDestination(destination());
 		jmsContainer.setMessageListener(messageListener());
-		
 		//
 		//jmsContainer.setTaskExecutor(taskExecutor);
 		
