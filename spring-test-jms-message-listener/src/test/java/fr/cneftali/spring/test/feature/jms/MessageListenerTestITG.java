@@ -19,6 +19,9 @@ public class MessageListenerTestITG {
 	
 	@Test
 	public void whould_work() {
-		jmsTemplate.convertAndSend(new Request(2L, "tototo"));
+		
+		for (long cpt = 0; cpt <= 10000; cpt ++) {
+			jmsTemplate.convertAndSend(new Request(cpt, "tototo"));
+		}
 	}
 }
