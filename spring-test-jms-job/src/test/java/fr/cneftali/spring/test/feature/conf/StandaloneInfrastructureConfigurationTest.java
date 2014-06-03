@@ -1,7 +1,5 @@
 package fr.cneftali.spring.test.feature.conf;
 
-import javax.sql.DataSource;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +8,6 @@ import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,18 +25,18 @@ public class StandaloneInfrastructureConfigurationTest {
 	@Autowired
 	private JobLauncher jobLauncher;
  
-	@Autowired
-	private DataSource dataSource;
+//	@Autowired
+//	private DataSource dataSource;
 	
 	@Autowired
 	private JmsTemplate jmsTemplate;
  
-	private JdbcTemplate jdbcTemplate;
+//	private JdbcTemplate jdbcTemplate;
  
 	@Before
 	public void setup(){
-		jdbcTemplate = new JdbcTemplate(dataSource);
-		for (long cpt = 0; cpt < 20000; cpt++) {
+//		jdbcTemplate = new JdbcTemplate(dataSource);
+		for (long cpt = 0; cpt < 50000 ; cpt++) {
 			jmsTemplate.convertAndSend(new Request(cpt, "test" + cpt));
 		}
 	}
