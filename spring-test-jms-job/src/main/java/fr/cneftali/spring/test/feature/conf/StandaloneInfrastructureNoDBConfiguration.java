@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing
 public class StandaloneInfrastructureNoDBConfiguration {
 
-
     // Permet d'enregistrer les/le jobs définis dans une classe javaconfig dans
     // le job registry au runtime (not dynamic)
     @Bean

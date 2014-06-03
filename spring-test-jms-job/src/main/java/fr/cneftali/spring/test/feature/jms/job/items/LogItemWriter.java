@@ -12,12 +12,12 @@ import fr.cneftali.spring.test.feature.jms.entity.Request;
 @Component
 public class LogItemWriter implements ItemWriter<Request> {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(LogItemWriter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LogItemWriter.class);
 
-	@Override
-	public void write(List<? extends Request> items) throws Exception {
-		for (final Request request : items) {
-			LOGGER.info("**** [LogItemWriter] writing item: " + request);
-		}
-	}
+    @Override
+    public void write(List<? extends Request> items) throws Exception {
+        for (final Request request : items) {
+            LOGGER.info("**** [LogItemWriter] writing item: " + request);
+        }
+    }
 }
